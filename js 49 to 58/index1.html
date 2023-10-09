@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Form</title>
+</head>
+<body>
+    <h1>Signup Form</h1>
+    <form id="signupForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>Submitted Data:</h2>
+    <div id="displayData"></div>
+
+    <script>
+        const form = document.getElementById('signupForm');
+        const displayData = document.getElementById('displayData');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = form.name.value;
+            const email = form.email.value;
+            const password = form.password.value;
+
+            const dataHTML = `
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Password:</strong> ${password}</p>
+            `;
+
+            displayData.innerHTML = dataHTML;
+        });
+    </script>
+    <script src="./app1.js"></script>
+</body>
+</html>

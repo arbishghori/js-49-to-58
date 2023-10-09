@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Details</title>
+    <style>
+        .item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .item .details {
+            display: none;
+        }
+
+        .item .read-more {
+            color: blue;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="item">
+        <h2>Facts For Students</h2>
+        <p>Your heart beats about 115,000 every day. The human body is made up of about 37 trillion cells. The human eye is comprised of about 2 million working parts. Humans are born with about 300 bones, but some fuse together as we grow older.
+            <p><span class="read-more">Read more</span></p>
+    </div>
+
+    <div class="item">
+        <h2>Did You Know Facts?</h2>
+        <p>
+            Our planet has more trees compared to stars in the solar system.
+            Water can boil & freeze at the same time.
+            Lights take almost eight minutes to proceed from the sun to earth.
+            Grasshoppers have ears in their bellies.
+            A cockroach has the ability to live for up to one week without its head.
+            . <span class="details">Additional details about Item 2.</span></p>
+        <p>
+            <span class="read-more">Read more</span></p>
+    </div>
+
+    <script>
+        const readMoreButtons = document.querySelectorAll('.read-more');
+
+        readMoreButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const details = this.parentElement.querySelector('.details');
+                details.style.display = 'inline';
+                this.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
